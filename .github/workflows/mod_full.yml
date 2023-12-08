@@ -12,7 +12,7 @@ on:
   repository_dispatch:
   workflow_dispatch:
   schedule:
-    - cron: 0 16 * * 5
+    - cron: 30 21 * * 5
   # watch:
   #   types: started
 
