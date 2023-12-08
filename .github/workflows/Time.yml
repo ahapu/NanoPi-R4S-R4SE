@@ -1,0 +1,16 @@
+name: Specifying Timezone
+
+on: [push]
+
+env:
+  TZ: Asia/Shanghai
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Show the timezone
+      run: |
+        echo "The timezone is $TZ"
+        date
