@@ -27,7 +27,7 @@
 ### 该升级支持4G版，1G版
 - 多版本在里面，自己选 👇ok 
 ```
-wget https://raw.githubusercontent.com/lone-wind/scripts/main/onlineupdate.sh && sh onlineupdate.sh
+wget https://raw.githubusercontent.com/ahapu/NanoPi-R4S-R4SE/main/onlineupdate.sh && sh onlineupdate.sh
 ```
 
 # 插件展示
