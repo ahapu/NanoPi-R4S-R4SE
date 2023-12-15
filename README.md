@@ -1,4 +1,6 @@
 # NanoPi-R4S-R4SE
+#2023.12.15默认壁纸准备改为ROG x AlanWalker
+#2023.12.22版本，ROOTFS分区同一调整为2048M
 ## 👉使用本固件前，请严格遵守国家互联网使用相关法律规定,不要违反国家法律规定！👈
 ## 未经许可不得用于任何商用用途。
 ### 源代码地址
@@ -20,6 +22,7 @@
 
 ### 默认编译  
 
+- 修改了scripts/lean.sh管理IP
 - 用户名：root 密码：password  管理IP：192.168.23.1
 - 下载地址：https://github.com/ahapu/NanoPi-R4S-R4SE/releases
 - 电报群：https://t.me/DHDAXCW
