@@ -8,7 +8,7 @@
 #=================================================
 
 # 🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧
-
+rm -rf customfeeds/luci/themes/luci-theme-argon
 # alist
 git clone https://github.com/sbwml/luci-app-alist package/alist
 rm -rf feeds/packages/lang/golang
@@ -27,15 +27,13 @@ rm -rf openwrt-package/luci-app-verysync
 # Add luci-app-passwall
 git clone --depth=1 https://github.com/xiaorouji/openwrt-passwall-packages
 git clone --depth=1 https://github.com/xiaorouji/openwrt-passwall2
-svn export https://github.com/xiaorouji/openwrt-passwall/trunk/luci-app-passwall
+git clone --depth=1 https://github.com/xiaorouji/openwrt-passwall
 
 # Add luci-app-irqbalance by QiuSimons https://github.com/QiuSimons
 svn export https://github.com/QiuSimons/OpenWrt-Add/trunk/luci-app-irqbalance
 
 # Add luci-app-ssr-plus
 git clone --depth=1 -b main https://github.com/fw876/helloworld
-# git clone --depth=1 -b main https://github.com/fw876/helloworld package/luci-app-ssr-plus    copy from haiibo
-# git clone --depth=1 https://github.com/fw876/helloworld
 
 # Add luci-app-unblockneteasemusic
 git clone --branch master https://github.com/UnblockNeteaseMusic/luci-app-unblockneteasemusic.git
@@ -48,13 +46,9 @@ git clone --depth=1 https://github.com/jerrykuku/luci-app-vssr
 git clone --depth=1 https://github.com/ysc3839/luci-proto-minieap
 
 # Add OpenClash
-svn export https://github.com/vernesong/OpenClash/trunk/luci-app-openclash
+git clone --depth=1 https://github.com/vernesong/OpenClash
 
-# Add ddnsto & linkease
-svn export https://github.com/linkease/nas-packages-luci/trunk/luci/luci-app-ddnsto
-svn export https://github.com/linkease/nas-packages/trunk/network/services/ddnsto
-
-# Add luci-app-onliner (need luci-app-nlbwmon)
+# Add luci-app-onliner (need luci-app-nlbwmon) 
 git clone --depth=1 https://github.com/rufengsuixing/luci-app-onliner
 
 # Add ServerChan
@@ -65,11 +59,41 @@ git clone --depth=1 https://github.com/iwrt/luci-app-ikoolproxy.git
 rm -rf ../../customfeeds/luci/applications/luci-app-kodexplorer
 
 # Add luci-theme
-git clone https://github.com/ahapu/theme
+git clone https://github.com/DHDAXCW/theme
 git clone --depth=1 https://github.com/jerrykuku/luci-app-argon-config
 
 # Add subconverter
 git clone --depth=1 https://github.com/tindy2013/openwrt-subconverter
+
+# Add luci-app-poweroff
+git clone --depth=1 https://github.com/esirplayground/luci-app-poweroff
+
+# add luci-theme-argon
+git clone --depth=1 -b 18.06 https://github.com/jerrykuku/luci-theme-argon
+git clone --depth=1 https://github.com/jerrykuku/luci-app-argon-config
+rm -rf ../lean/luci-theme-argon
+rm -rf ./luci-theme-argon/htdocs/luci-static/argon/img/bg1.jpg
+cp -f $GITHUB_WORKSPACE/data/bg1.jpg luci-theme-argon/htdocs/luci-static/argon/img/bg1.jpg
+
+# Add OpenAppFilter
+git clone --depth=1 https://github.com/destan19/OpenAppFilter
+
+# Add luci-aliyundrive-webdav
+rm -rf ../../customfeeds/luci/applications/luci-app-aliyundrive-webdav
+rm -rf ../../customfeeds/packages/multimedia/aliyundrive-webdav
+git clone --depth=1 https://github.com/messense/aliyundrive-webdav
+mkdir -p linkease
+popd
+
+# Add ddnsto & linkease
+pushd package/community/linkease
+git clone --depth=1 https://github.com/linkease/nas-packages-luci
+git clone --depth=1 https://github.com/linkease/nas-packages
+cd nas-packages-luci
+rm -rf luci-app-istorex luci-app-quickstart luci-app-linkease luci-app-unishare && cd ../
+cd nas-packages/network/services
+rm -rf linkease quickstart unishare webdav2 && cd ../../ && rm -rf multimedia/ffmpeg-remux && cd ../
+popd
 
 # Add luci-app-smartdns & smartdns
 svn export https://github.com/281677160/openwrt-package/trunk/luci-app-smartdns
@@ -79,18 +103,6 @@ svn export https://github.com/msylgj/OpenWrt_luci-app/trunk/luci-app-services-wo
 
 # Add apk (Apk Packages Manager)
 svn export https://github.com/openwrt/packages/trunk/utils/apk
-
-# Add luci-app-poweroff
-git clone --depth=1 https://github.com/esirplayground/luci-app-poweroff
-
-# Add OpenAppFilter
-git clone --depth=1 https://github.com/destan19/OpenAppFilter
-
-# Add luci-aliyundrive-webdav
-rm -rf ../../customfeeds/luci/applications/luci-app-aliyundrive-webdav
-rm -rf ../../customfeeds/packages/multimedia/aliyundrive-webdav
-svn export https://github.com/messense/aliyundrive-webdav/trunk/openwrt/aliyundrive-webdav
-svn export https://github.com/messense/aliyundrive-webdav/trunk/openwrt/luci-app-aliyundrive-webdav
 
 # Add Pandownload
 pushd package/lean
