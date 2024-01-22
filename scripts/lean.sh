@@ -29,9 +29,6 @@ git clone --depth=1 https://github.com/xiaorouji/openwrt-passwall-packages
 git clone --depth=1 https://github.com/xiaorouji/openwrt-passwall2
 git clone --depth=1 https://github.com/xiaorouji/openwrt-passwall
 
-# Add luci-app-irqbalance by QiuSimons https://github.com/QiuSimons
-svn export https://github.com/QiuSimons/OpenWrt-Add/trunk/luci-app-irqbalance
-
 # Add luci-app-ssr-plus
 git clone --depth=1 -b main https://github.com/fw876/helloworld
 
@@ -103,6 +100,9 @@ svn export https://github.com/msylgj/OpenWrt_luci-app/trunk/luci-app-services-wo
 
 # Add apk (Apk Packages Manager)
 svn export https://github.com/openwrt/packages/trunk/utils/apk
+
+# Add luci-app-irqbalance by QiuSimons https://github.com/QiuSimons
+svn export https://github.com/QiuSimons/OpenWrt-Add/trunk/luci-app-irqbalance
 
 # Add Pandownload
 pushd package/lean
