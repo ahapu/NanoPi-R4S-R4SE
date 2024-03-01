@@ -179,9 +179,9 @@ jobs:
         rm -rf config.buildinfo
         rm -rf packages-server.zip
         mv openwrt-rockchip-armv8-friendlyarm_nanopi-r4s-ext4-sysupgrade.img.gz beggar-friendlyarm_nanopi-r4s-ext4-sysupgrade.img.gz 
-        mv openwrt-rockchip-armv8-friendlyarm_nanopi-r4se-ext4-sysupgrade.img.gz beggar-friendlyarm_nanopi-r4se-ext4-sysupgrade.img.gz 
+        rm -rf openwrt-rockchip-armv8-friendlyarm_nanopi-r4se-ext4-sysupgrade.img.gz beggar-friendlyarm_nanopi-r4se-ext4-sysupgrade.img.gz 
         mv openwrt-rockchip-armv8-friendlyarm_nanopi-r4s-squashfs-sysupgrade.img.gz beggar-friendlyarm_nanopi-r4s-squashfs-sysupgrade.img.gz
-        mv openwrt-rockchip-armv8-friendlyarm_nanopi-r4se-squashfs-sysupgrade.img.gz beggar-friendlyarm_nanopi-r4se-squashfs-sysupgrade.img.gz
+        rm -rf openwrt-rockchip-armv8-friendlyarm_nanopi-r4se-squashfs-sysupgrade.img.gz beggar-friendlyarm_nanopi-r4se-squashfs-sysupgrade.img.gz
         popd
         make checksum
         mv bin/targets/rockchip/armv8/sha256sums bin/targets/rockchip/armv8/beggar-sha256sums
