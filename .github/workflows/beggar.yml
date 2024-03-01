@@ -18,7 +18,7 @@ on:
 
 env:
   REPO_URL: git@github.com:ahapu/NanoPi-R4S-R4SE.git
-  REPO_BRANCH: stable
+  REPO_BRANCH: main
   CONFIG_FILE: configs/lean/lean_beggar.config
   DIY_SH: scripts/lean.sh
   KMODS_IN_FIRMWARE: true
