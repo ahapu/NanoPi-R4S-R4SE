@@ -17,8 +17,8 @@ on:
   #   types: started
 
 env:
-  REPO_URL: git@github.com:ahapu/NanoPi-R4S-R4SE.git
-  REPO_BRANCH: main
+  REPO_URL: https://github.com/ahapu/lede-rockchip
+  REPO_BRANCH: stable
   CONFIG_FILE: configs/lean/lean_beggar.config
   DIY_SH: scripts/lean.sh
   KMODS_IN_FIRMWARE: true
@@ -56,7 +56,7 @@ jobs:
     - name: Clone Source Code
       run: |
         df -hT $PWD
-        git clone $REPO_URL -b $REPO_BRANCH openwrt
+        git clone $REPO_URL -b $REPO_BRANCH main
         cd openwrt
         
     - name: Update Feeds
