@@ -11,7 +11,7 @@ name: R4S-乞丐-MOD
 on:
   repository_dispatch:
   workflow_dispatch:
-  schedule:
+  #schedule:
     #- cron: 10 16 * * 4
   # watch:
   #   types: started
