@@ -17,7 +17,7 @@ on:
   #   types: started
 
 env:
-  REPO_URL: https://github.com/ahapu/NanoPi-R4S-R4SE.git
+  REPO_URL: https://github.com/ahapu/lede-rockchip
   REPO_BRANCH: master
   CONFIG_FILE: configs/lean/beggar.config
   DIY_SH: scripts/lean.sh
