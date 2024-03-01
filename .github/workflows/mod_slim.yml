@@ -11,8 +11,8 @@ name: R4S-精简-MOD
 on:
   repository_dispatch:
   workflow_dispatch:
-  schedule:
-  #  - cron: 10 20 * * 4
+  #schedule:
+    #- cron: 10 20 * * 4
   # watch:
   #   types: started
 
