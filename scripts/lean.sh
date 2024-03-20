@@ -92,23 +92,6 @@ cd nas-packages/network/services
 rm -rf linkease quickstart unishare webdav2 && cd ../../ && rm -rf multimedia/ffmpeg-remux && cd ../
 popd
 
-# Add luci-app-smartdns & smartdns
-svn export https://github.com/281677160/openwrt-package/trunk/luci-app-smartdns
-
-# Add luci-app-services-wolplus
-svn export https://github.com/msylgj/OpenWrt_luci-app/trunk/luci-app-services-wolplus
-
-# Add apk (Apk Packages Manager)
-svn export https://github.com/openwrt/packages/trunk/utils/apk
-
-# Add luci-app-irqbalance by QiuSimons https://github.com/QiuSimons
-svn export https://github.com/QiuSimons/OpenWrt-Add/trunk/luci-app-irqbalance
-
-# Add Pandownload
-pushd package/lean
-svn export https://github.com/immortalwrt/packages/trunk/net/pandownload-fake-server
-popd
-
 # Mod zzz-default-settings
 pushd package/lean/default-settings/files
 export date_version=$(date -d "$(rdate -n -4 -p ntp.aliyun.com)" +'%Y-%m-%d')
