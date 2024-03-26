@@ -45,7 +45,7 @@ git clone --depth=1 https://github.com/ysc3839/luci-proto-minieap
 # Add OpenClash
 git clone --depth=1 https://github.com/vernesong/OpenClash
 
-# Add luci-app-onliner (need luci-app-nlbwmon) 
+# Add luci-app-onliner (need luci-app-nlbwmon)
 git clone --depth=1 https://github.com/rufengsuixing/luci-app-onliner
 
 # Add ServerChan
