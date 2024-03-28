@@ -53,11 +53,11 @@ git clone --depth=1 https://github.com/vernesong/OpenClash
 git clone --depth=1 https://github.com/rufengsuixing/luci-app-onliner
 
 # Add ServerChan
-git clone --depth=1 https://github.com/tty228/luci-app-serverchan
+#git clone --depth=1 https://github.com/tty228/luci-app-serverchan
 
 # Add luci-app-ikoolproxy (godproxy)
-git clone --depth=1 https://github.com/iwrt/luci-app-ikoolproxy.git
-rm -rf ../../customfeeds/luci/applications/luci-app-kodexplorer
+#git clone --depth=1 https://github.com/iwrt/luci-app-ikoolproxy.git
+#rm -rf ../../customfeeds/luci/applications/luci-app-kodexplorer
 
 # Add luci-theme
 git clone --depth=1 -b 18.06 https://github.com/jerrykuku/luci-theme-argon
