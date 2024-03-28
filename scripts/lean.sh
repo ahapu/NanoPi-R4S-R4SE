@@ -12,7 +12,7 @@ rm -rf customfeeds/luci/themes/luci-theme-argon
 # alist
 git clone https://github.com/sbwml/luci-app-alist package/alist
 rm -rf feeds/packages/lang/golang
-git clone https://github.com/sbwml/packages_lang_golang -b 21.x feeds/packages/lang/golang
+git clone https://github.com/sbwml/packages_lang_golang -b 22.x feeds/packages/lang/golang
 
 # Clone community packages
 mkdir package/community
@@ -33,7 +33,8 @@ git clone --depth=1 https://github.com/xiaorouji/openwrt-passwall
 git clone --depth=1 -b main https://github.com/fw876/helloworld
 
 # Add luci-app-unblockneteasemusic
-git clone --branch master https://github.com/UnblockNeteaseMusic/luci-app-unblockneteasemusic.git
+rm -rf ../../customfeeds/luci/applications/luci-app-unblockmusic
+git clone --depth=1 https://github.com/UnblockNeteaseMusic/luci-app-unblockneteasemusic.git
 
 # Add luci-app-vssr <M>
 git clone --depth=1 https://github.com/jerrykuku/lua-maxminddb.git
@@ -57,6 +58,9 @@ rm -rf ../../customfeeds/luci/applications/luci-app-kodexplorer
 
 # Add subconverter
 git clone --depth=1 https://github.com/tindy2013/openwrt-subconverter
+
+# alist 
+git clone --depth=1 https://github.com/sbwml/openwrt-alist
 
 # Add luci-app-poweroff
 git clone --depth=1 https://github.com/esirplayground/luci-app-poweroff
@@ -92,9 +96,14 @@ popd
 
 # Mod zzz-default-settings
 pushd package/lean/default-settings/files
+sed -i '/http/d' zzz-default-settings
+sed -i '/18.06/d' zzz-default-settings
+export orig_version=$(cat "zzz-default-settings" | grep DISTRIB_REVISION= | awk -F "'" '{print $2}')
 export date_version=$(date -d "$(rdate -n -4 -p ntp.aliyun.com)" +'%Y-%m-%d')
 sed -i "s/${orig_version}/${orig_version} (${date_version})/g" zzz-default-settings
 popd
+
+rm -rf nas-packages-luci/luci/luci-app-istorex
 
 # Change default shell to zsh
 sed -i 's/\/bin\/ash/\/usr\/bin\/zsh/g' package/base-files/files/etc/passwd
