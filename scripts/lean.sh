@@ -76,7 +76,7 @@ wget -P target/linux/rockchip/armv8/base-files/etc/init.d/ https://github.com/fr
 wget -P target/linux/rockchip/armv8/base-files/usr/bin/ https://github.com/friendlyarm/friendlywrt/blob/master-v23.05/target/linux/rockchip/armv8/base-files/usr/bin/cputemp.sh
 wget -P target/linux/rockchip/armv8/base-files/usr/bin/ https://github.com/friendlyarm/friendlywrt/blob/master-v23.05/target/linux/rockchip/armv8/base-files/usr/bin/fa-fancontrol-direct.sh
 wget -P target/linux/rockchip/armv8/base-files/usr/bin/ https://github.com/friendlyarm/friendlywrt/blob/master-v23.05/target/linux/rockchip/armv8/base-files/usr/bin/fa-fancontrol.sh
-chmod u+x target/linux/rockchip/armv8/base-files/etc/init.d/fa-rk3399-pwmfan
+chmod u+x target/linux/rockchip/armv8/base-files/etc/init.d/fa-fancontrol
 chmod u+x target/linux/rockchip/armv8/base-files/usr/bin/cputemp.sh
 chmod u+x target/linux/rockchip/armv8/base-files/usr/bin/fa-fancontrol-direct.sh
 chmod u+x target/linux/rockchip/armv8/base-files/usr/bin/fa-fancontrol.sh
