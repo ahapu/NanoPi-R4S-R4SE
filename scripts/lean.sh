@@ -93,10 +93,6 @@ popd
 
 rm -rf nas-packages-luci/luci/luci-app-istorex
 
-# Add luci-app-vssr <M>
-git clone --depth=1 https://github.com/jerrykuku/lua-maxminddb.git
-git clone --depth=1 https://github.com/jerrykuku/luci-app-vssr
-
 # Add ServerChan
 git clone --depth=1 https://github.com/tty228/luci-app-serverchan
 
