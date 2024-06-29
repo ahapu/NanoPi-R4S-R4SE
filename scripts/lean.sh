@@ -31,16 +31,6 @@ git clone --depth=1 https://github.com/xiaorouji/openwrt-passwall-packages
 git clone --depth=1 https://github.com/xiaorouji/openwrt-passwall2
 git clone --depth=1 https://github.com/xiaorouji/openwrt-passwall
 
-# Add luci-app-unblockneteasemusic
-rm -rf ../../customfeeds/luci/applications/luci-app-unblockmusic
-git clone --depth=1 https://github.com/UnblockNeteaseMusic/luci-app-unblockneteasemusic.git
-
-# Add luci-proto-minieap
-git clone --depth=1 https://github.com/ysc3839/luci-proto-minieap
-
-# Add luci-app-onliner (need luci-app-nlbwmon)
-git clone --depth=1 https://github.com/rufengsuixing/luci-app-onliner
-
 # Add OpenClash
 git clone --depth=1 https://github.com/vernesong/OpenClash
 
@@ -60,16 +50,11 @@ git clone https://github.com/DHDAXCW/theme
 git clone --depth=1 https://github.com/tindy2013/openwrt-subconverter
 
 # alist
-git clone --depth=1 https://github.com/sbwml/openwrt-alist
+git clone --depth=1 https://github.com/sbwml/luci-app-alist
 
 # Add OpenAppFilter
 git clone --depth=1 https://github.com/destan19/OpenAppFilter
 
-# Add luci-aliyundrive-webdav
-rm -rf ../../customfeeds/luci/applications/luci-app-aliyundrive-webdav
-rm -rf ../../customfeeds/packages/multimedia/aliyundrive-webdav
-git clone --depth=1 https://github.com/messense/aliyundrive-webdav
-mkdir -p linkease
 popd
 
 # Mod zzz-default-settings
@@ -80,25 +65,6 @@ export orig_version=$(cat "zzz-default-settings" | grep DISTRIB_REVISION= | awk 
 export date_version=$(date -d "$(rdate -n -4 -p ntp.aliyun.com)" +'%Y-%m-%d')
 sed -i "s/${orig_version}/${orig_version} (${date_version})/g" zzz-default-settings
 popd
-
-# Add ddnsto & linkease
-pushd package/community/linkease
-git clone --depth=1 https://github.com/linkease/nas-packages-luci
-git clone --depth=1 https://github.com/linkease/nas-packages
-cd nas-packages-luci
-rm -rf luci-app-istorex luci-app-quickstart luci-app-linkease luci-app-unishare && cd ../
-cd nas-packages/network/services
-rm -rf linkease quickstart unishare webdav2 && cd ../../ && rm -rf multimedia/ffmpeg-remux && cd ../
-popd
-
-rm -rf nas-packages-luci/luci/luci-app-istorex
-
-# Add ServerChan
-git clone --depth=1 https://github.com/tty228/luci-app-serverchan
-
-# Add luci-app-ikoolproxy (godproxy)
-git clone --depth=1 https://github.com/iwrt/luci-app-ikoolproxy.git
-rm -rf ../../customfeeds/luci/applications/luci-app-kodexplorer
 
 # Change default shell to zsh
 sed -i 's/\/bin\/ash/\/usr\/bin\/zsh/g' package/base-files/files/etc/passwd
