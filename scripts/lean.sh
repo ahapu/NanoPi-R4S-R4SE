@@ -20,9 +20,6 @@ rm -rf openwrt-package/luci-app-verysync
 # apppppppp
 git clone --depth=1 https://github.com/DHDAXCW/dhdaxcw-app
 
-# Add luci-app-ssr-plus
-git clone --depth=1 https://github.com/fw876/helloworld
-
 # Add luci-app-passwall
 git clone --depth=1 https://github.com/xiaorouji/openwrt-passwall-packages
 git clone --depth=1 https://github.com/xiaorouji/openwrt-passwall2
@@ -43,9 +40,6 @@ git clone https://github.com/DHDAXCW/theme
 # Add luci-app-lucky
 git clone --depth=1 https://github.com/gdy666/luci-app-lucky
 
-# alist
-git clone -b lua --depth=1 https://github.com/sbwml/luci-app-alist
-
 # Add OpenAppFilter
 git clone --depth=1 https://github.com/destan19/OpenAppFilter
 
@@ -62,9 +56,7 @@ popd
 
 rm -rf nas-packages-luci/luci/luci-app-istorex
 rm -rf feeds/packages/lang/golang
-git clone https://github.com/sbwml/packages_lang_golang -b 22.x feeds/packages/lang/golang
-rm -rf package/feeds/packages/libmbim
-rm -rf package/feeds/packages/lame
+git clone https://github.com/sbwml/packages_lang_golang -b 23.x feeds/packages/lang/golang
 rm -rf package/feeds/packages/apk
 rm -rf package/feeds/packages/adguardhome
 
@@ -72,4 +64,4 @@ rm -rf package/feeds/packages/adguardhome
 sed -i 's/\/bin\/ash/\/usr\/bin\/zsh/g' package/base-files/files/etc/passwd
 
 # Modify default IP
-sed -i 's/192.168.1.1/192.168.11.1/g' package/base-files/files/bin/config_generate
+sed -i 's/192.168.1.1/192.168.23.1/g' package/base-files/files/bin/config_generate
