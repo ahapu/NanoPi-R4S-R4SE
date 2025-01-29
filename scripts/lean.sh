@@ -20,11 +20,20 @@ rm -rf openwrt-package/luci-app-verysync
 # Add luci-app-ssr-plus
 git clone --depth=1 https://github.com/fw876/helloworld
 
+# Add luci-proto-minieap
+git clone --depth=1 https://github.com/ysc3839/luci-proto-minieap
+
+# Add luci-app-onliner (need luci-app-nlbwmon)
+git clone --depth=1 https://github.com/rufengsuixing/luci-app-onliner
+
 # Add OpenClash
 git clone --depth=1 https://github.com/vernesong/OpenClash
 
+# Add luci-app-poweroff
+git clone --depth=1 https://github.com/esirplayground/luci-app-poweroff
+
 # Add luci-theme
-git clone --depth=1 -b 18.06 https://github.com/jerrykuku/luci-theme-argon
+git clone --depth=1 https://github.com/jerrykuku/luci-theme-argon
 git clone --depth=1 https://github.com/jerrykuku/luci-app-argon-config
 rm -rf ../../customfeeds/luci/themes/luci-theme-argon
 rm -rf ../../customfeeds/luci/themes/luci-theme-argon-mod
