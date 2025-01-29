@@ -17,16 +17,8 @@ rm -rf ../../customfeeds/luci/applications/luci-app-kodexplorer
 rm -rf openwrt-package/verysync
 rm -rf openwrt-package/luci-app-verysync
 
-# apppppppp
-#git clone --depth=1 https://github.com/DHDAXCW/dhdaxcw-app
-
 # Add luci-app-ssr-plus
-#git clone --depth=1 https://github.com/fw876/helloworld
-
-# Add luci-app-passwall
-#git clone --depth=1 https://github.com/xiaorouji/openwrt-passwall-packages
-#git clone --depth=1 https://github.com/xiaorouji/openwrt-passwall2
-#git clone --depth=1 https://github.com/xiaorouji/openwrt-passwall
+git clone --depth=1 https://github.com/fw876/helloworld
 
 # Add OpenClash
 git clone --depth=1 https://github.com/vernesong/OpenClash
@@ -40,21 +32,8 @@ rm -rf ./luci-theme-argon/htdocs/luci-static/argon/img/bg1.jpg
 cp -f $GITHUB_WORKSPACE/data/bg1.jpg luci-theme-argon/htdocs/luci-static/argon/img/bg1.jpg
 git clone https://github.com/DHDAXCW/theme
 
-# Add luci-app-lucky
-#git clone --depth=1 -b 2.13.4 https://github.com/DHDAXCW/luci-app-lucky
-rm -rf ../../customfeeds/packages/net/lucky
-
-# alist
-#git clone -b lua --depth=1 https://github.com/sbwml/luci-app-alist
-
 # Add OpenAppFilter
 git clone --depth=1 https://github.com/destan19/OpenAppFilter
-
-# qbittorrent
-rm -rf ../../customfeeds/packages/net/qBittorrent
-rm -rf ../../customfeeds/packages/libs/rblibtorrent
-#git clone --depth=1 https://github.com/sbwml/luci-app-qbittorrent
-rm -rf luci-app-qbittorrent/luci-app-qbittorrent
 
 popd
  
@@ -79,3 +58,13 @@ sed -i 's/\/bin\/ash/\/usr\/bin\/zsh/g' package/base-files/files/etc/passwd
 
 # Modify default IP
 sed -i 's/192.168.1.1/192.168.23.1/g' package/base-files/files/bin/config_generate
+
+# 风扇脚本
+wget -P target/linux/rockchip/armv8/base-files/etc/init.d/ https://github.com/friendlyarm/friendlywrt/blob/master-v23.05/target/linux/rockchip/armv8/base-files/etc/init.d/fa-fancontrol
+wget -P target/linux/rockchip/armv8/base-files/usr/bin/ https://github.com/friendlyarm/friendlywrt/blob/master-v23.05/target/linux/rockchip/armv8/base-files/usr/bin/fa-fancontrol.sh
+wget -P target/linux/rockchip/armv8/base-files/usr/bin/ https://github.com/friendlyarm/friendlywrt/blob/master-v23.05/target/linux/rockchip/armv8/base-files/usr/bin/fa-fancontrol-direct.sh
+wget -P target/linux/rockchip/armv8/base-files/usr/bin/ https://github.com/friendlyarm/friendlywrt/blob/master-v23.05/target/linux/rockchip/armv8/base-files/usr/bin/cputemp.sh
+chmod u+x target/linux/rockchip/armv8/base-files/etc/init.d/fa-fancontrol
+chmod u+x target/linux/rockchip/armv8/base-files/usr/bin/fa-fancontrol.sh
+chmod u+x target/linux/rockchip/armv8/base-files/usr/bin/fa-fancontrol-direct.sh
+chmod u+x target/linux/rockchip/armv8/base-files/usr/bin/cputemp.sh
