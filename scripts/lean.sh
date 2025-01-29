@@ -33,7 +33,7 @@ git clone --depth=1 https://github.com/vernesong/OpenClash
 git clone --depth=1 https://github.com/esirplayground/luci-app-poweroff
 
 # Add luci-theme
-git clone --depth=1 https://github.com/jerrykuku/luci-theme-argon
+git clone --depth=1 -b 18.06 https://github.com/jerrykuku/luci-theme-argon
 git clone --depth=1 https://github.com/jerrykuku/luci-app-argon-config
 rm -rf ../../customfeeds/luci/themes/luci-theme-argon
 rm -rf ../../customfeeds/luci/themes/luci-theme-argon-mod
